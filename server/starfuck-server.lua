@@ -3,7 +3,7 @@ require("lfs")
 
 require("irc/init")
 
-global_botname = "josefnpat-bot"
+global_botname = "josefnpat|bot"
 global_channel = "#asswb"
 global_server = "irc.freenode.net"
 
