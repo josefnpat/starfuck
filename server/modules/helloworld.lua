@@ -1,11 +1,11 @@
-local reload = {}
+local helloworld = {}
 
-function reload:getTrigger()
+function helloworld:getTrigger()
   return "!hello"
 end
 
-function reload:onHook(irc,user,channel,message,argv)
+function helloworld:onHook(irc,user,channel,message,argv)
   return "Hello "..user.nick.."!"
 end
 
-return reload
+return helloworld
