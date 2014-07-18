@@ -1,5 +1,3 @@
--- sudo apt-get install liblua5.1-filesystem0 liblua5.1-socket2
-
 require("socket")
 require("lfs")
 
