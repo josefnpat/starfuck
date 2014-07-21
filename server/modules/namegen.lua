@@ -84,17 +84,14 @@ module.patterns = {
 }
 
 function module:onHook(irc,user,channel,message,argv)
-  local pattern = "default"
-  if argv[2] then
-    if self.patterns[argv[2]] then
-      pattern = argv[2]
-    else
-      local opts = {}
-      for i,v in pairs(self.patterns) do
-        table.insert(opts,i)
-      end
-      return "Usage: "..self:getTrigger().." ["..table.concat(opts,"|").."]"
+  if argv[2] and self.patterns[argv[2]] then
+    pattern = argv[2]
+  else
+    local opts = {}
+    for i,v in pairs(self.patterns) do
+      table.insert(opts,i)
     end
+    return "Usage: "..self:getTrigger().." ["..table.concat(opts,"|").."]"
   end
   local genf = self.patterns[pattern]
   return genf(self)
