@@ -1,6 +1,9 @@
 #!/bin/sh
 
+mkdir -p logs
+
 while true; do
-  lua ./starfuck-server.lua
+  UTS=`date "+%s"`
+  lua ./starfuck-server.lua > logs/$UTS.log
   sleep 1
 done

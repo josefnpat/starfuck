@@ -48,6 +48,7 @@ s:hook("OnChat", function(user, channel, message)
     end
   end
 end)
+print("Server started at "..os.time())
 s:connect(global_server)
 s:join(global_channel)
 
