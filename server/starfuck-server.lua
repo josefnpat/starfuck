@@ -40,7 +40,11 @@ s:hook("OnChat", function(user, channel, message)
   if argv[1] and global_modules[argv[1]] then
     local ret = global_modules[argv[1]]:onHook(s,user,channel,message,argv)
     if type(ret) == "string" then
-      s:sendChat(global_channel,ret) 
+      if channel == global_botname then
+        s:sendChat(user.nick,ret)
+      else
+        s:sendChat(global_channel,ret)
+      end
     end
   end
 end)
