@@ -14,9 +14,9 @@ module.MightAdjectiveDictionary = {"fierce","strong","fast","mighty","long","har
 module.DarkAdjectiveDictionary = {"grim","dark","damned","blood","doom","grey","black","haunted","force","spirit","ghost"}
 module.OrganicNounDictionary = {"firn","bloom","flower","plant","grass","leaf","oak"}
 module.OrganicAdjectiveDictionary = {"green","fertile","blossom","pink","dream","fresh"}
-module.lettergreepStart = {"lau","ar","wi","mo","sa","ta","ro","jo","a","mi","bla","au"}
-module.lettergreepMid = {"ni","man","ma","no","na","o","a","nae","se","ma","pi","ke","ek","ra"}
-module.lettergreepEnd = {"ra","jan","ld","lem","rs","ca","qa","tha","ta","ten","st","ph","da","th","ke","ir"}
+module.syllableStart = {"lau","ar","wi","mo","sa","ta","ro","jo","a","mi","bla","au"}
+module.syllableMid = {"ni","man","ma","no","na","o","a","nae","se","ma","pi","ke","ek","ra"}
+module.syllableEnd = {"ra","jan","ld","lem","rs","ca","qa","tha","ta","ten","st","ph","da","th","ke","ir"}
 module.hoodStart = {"Sha","Nay","Qui","She'","Na", "Dir'","Ta", "Queen ", "Tay", "Mar'", "Jaq", "Af"}
 module.hoodMid = {"ni","qui","ma", "tan", "shan", "nay", "ta", "que", "mo", "ri"}
 module.hoodEnd = {"ra","ti","'mo","ly", "'da", "ca", "qua", "que", "day", "ny"}
@@ -66,10 +66,10 @@ module.patterns = {
     return self.DarkAdjectiveDictionary[math.random(#self.DarkAdjectiveDictionary)] ..
       self.OrganicNounDictionary[math.random(#self.OrganicNounDictionary)]
   end,
-  lettergreep = function(self)
-    return self.lettergreepStart[math.random(#self.lettergreepStart)] ..
-      self.lettergreepMid[math.random(#self.lettergreepMid)] ..
-      self.lettergreepEnd[math.random(#self.lettergreepEnd)]
+  syllable = function(self)
+    return self.syllableStart[math.random(#self.syllableStart)] ..
+      self.syllableMid[math.random(#self.syllableMid)] ..
+      self.syllableEnd[math.random(#self.syllableEnd)]
   end,
   hood = function(self)
     return self.hoodStart[math.random(#self.hoodStart)] ..
